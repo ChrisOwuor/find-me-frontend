@@ -33,7 +33,7 @@ export default function Report() {
   };
   return (
     <div>
-      <h1 className="text-center">Report a missing person</h1>{" "}
+      <h1 className="px-12">Report a missing person</h1>{" "}
       <div className="p-12">
         {sent ? <Alert>{ mes.message}</Alert> : <p>You have not yet added</p>}
      </div>

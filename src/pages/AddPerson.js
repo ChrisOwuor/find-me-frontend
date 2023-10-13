@@ -39,11 +39,10 @@ export default function AddPerson() {
   };
   return (
     <div>
-      <h1 className="text-center"> Add a missing person</h1>{" "}
-        <p className="text-center">Your Traking code is :{trackCode }</p>
-      
+      <h1 className="px-12"> Add a missing person</h1>{" "}
+      <p className="text-center">Your Traking code is :{trackCode}</p>
       <div className="full flex justify-start p-12">
-        <form className="w-3/5 max-[1200px]:w-full " >
+        <form className="lg:w-4/5 w-full ">
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -54,8 +53,8 @@ export default function AddPerson() {
                 and as per the guidlines provided
               </p>
 
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="sm:col-span-4">
+              <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div className="names">
                   <label
                     htmlFor="username"
                     className="block text-sm font-medium leading-6 text-gray-900"
@@ -76,12 +75,33 @@ export default function AddPerson() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:col-span-4">
+                <div className="names">
+                  <label
+                    htmlFor="username"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Nickname
+                  </label>
+                  <div className="mt-2">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                      <input
+                        type="text"
+                        name="name"
+                        id="username"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        placeholder="check mate"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="place last seen">
                   <label
                     htmlFor="location"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Location{" "}
+                    Place Last Seen{" "}
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
@@ -97,7 +117,7 @@ export default function AddPerson() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:col-span-4">
+                <div className="">
                   <label
                     htmlFor="age"
                     className="block text-sm font-medium leading-6 text-gray-900"
@@ -107,7 +127,7 @@ export default function AddPerson() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
-                        type="text"
+                        type="number"
                         name="age"
                         id="age"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
@@ -118,8 +138,54 @@ export default function AddPerson() {
                     </div>
                   </div>
                 </div>
+                <div className="gender">
+                  <label
+                    htmlFor="gender"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Gender
+                  </label>
+                  <div className="mt-2">
+                    <select className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 py-1.5 sm:max-w-md w-full">
+                      {/* <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        placeholder="20"
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                      /> */}
+                      <option value="Male">-- Choose gender --</option>
 
-                <div className="col-span-full">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="others">Others</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="date last seen">
+                  <label
+                    htmlFor="location"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    date Last Seen{" "}
+                  </label>
+                  <div className="mt-2">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 sm:max-w-md">
+                      <input
+                        type="date"
+                        name="location"
+                        id="location"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        placeholder="Kariobangi"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="">
                   <label
                     htmlFor="description"
                     className="block text-sm font-medium leading-6 text-gray-900"
@@ -138,7 +204,7 @@ export default function AddPerson() {
                   </div>
                 </div>
 
-                <div className="col-span-full">
+                <div className="">
                   <label
                     htmlFor="photo"
                     className="block text-sm font-medium leading-6 text-gray-900"

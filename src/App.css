@@ -1,0 +1,7 @@
+.hero{
+    background-image: url(../src/assets/sp.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    mix-blend-mode: hard-light;
+}

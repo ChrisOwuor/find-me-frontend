@@ -8,7 +8,7 @@ export default function Find() {
     e.preventDefault();
     console.log("clicked");
     axios
-      .get(`http://localhost:8080/api/find-person/${code}`)
+      .get(`Process.env.BACKEND_URL${code}`)
       .then((response) => {
         console.log(response.data);
         setPsn(response.data);
@@ -21,7 +21,7 @@ export default function Find() {
   };
   return (
     <div>
-      <h1 className="text-center"> Search for a lost person person</h1>{" "}
+      <h1 className="px-12"> Search for a lost person person</h1>{" "}
       <div className="full flex justify-start p-12">
         <form className="w-3/5 max-[1200px]:w-full ">
           <div className="space-y-12">
@@ -84,7 +84,12 @@ export default function Find() {
             <h3 className="mt-4 text-lg font-medium text-gray-900">
               Name : {psn[0].name}
             </h3>
-            
+              <p className="age">
+                Age : {psn[0].age}
+              </p>
+              <p className="description">
+                Description :{psn[0].description}
+              </p>
           </div>
         )}
       </div>{" "}
